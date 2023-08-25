@@ -10,19 +10,4 @@ export class UserDataService {
 
   constructor(private http: HttpClient) {}
 
-  getAllUsers(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
-  }
-
-  createUser(user: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}`, user);
-  }
-
-  updateUser(userId: number, user: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${userId}`, user);
-  }
-
-  deleteUser(userId: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${userId}`);
-  }
 }

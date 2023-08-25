@@ -11,20 +11,28 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router, private dataService: UserDataService) { }
 
-  users:any = [];
+  users = [{
+    id: 1,
+    name: "Anand",
+    email: "anand@gmail.com",
+    gender: "Male",
+    status: true
+  },{
+    id: 2,
+    name: "pavan",
+    email: "pavan@gmail.com",
+    gender: "Male",
+    status: true
+  },{
+    id: 3,
+    name: "sai",
+    email: "sai@gmail.com",
+    gender: "Male",
+    status: false
+  }];
 
   ngOnInit(): void {
-    this.dataService.getAllUsers().subscribe({
-      next: (res) => {
-        this.users = res.response;
-        console.log(this.users);
-
-      },
-      error: (error) => {
-        console.log({error});
-
-      }
-    })
+    // GET users API call
   }
 
   editUser(user: any){
@@ -32,7 +40,9 @@ export class HomeComponent implements OnInit {
   }
 
   deleteUser(user: any) {
-
+    //DELETE user API call
+    let index = this.users.findIndex(data => data.id === user.id);
+    this.users.splice(index,1);
   }
 
 }

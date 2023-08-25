@@ -19,8 +19,6 @@ export class EditFormComponent implements OnInit {
   }
 
   saveChanges(): void {
-    // Implement save changes functionality here
-    // You can update the user data in your data source (e.g., API, service)
-    // After saving, navigate back to the previous page
+    //UPDATE api call here
   }
 }
