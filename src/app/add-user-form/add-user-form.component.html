@@ -1,0 +1,29 @@
+<div class="edit-container">
+  <a routerLink="/" class="back-button">
+    <i class="fa fa-arrow-left"></i> All Users
+  </a>
+  <h2>Add User</h2>
+  <form>
+    <div class="form-group">
+      <label for="name">Id</label>
+      <input type="number" id="name" [(ngModel)]="user.id" name="name" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" [(ngModel)]="user.name" name="name" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="user.email" name="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <input type="text" id="gender" [(ngModel)]="user.gender" name="gender" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="status">Status</label>
+      <input type="text" id="status" [(ngModel)]="user.status" name="status" class="form-control">
+    </div>
+    <button (click)="saveChanges()" class="btn btn-primary">Save Changes</button>
+  </form>
+</div>

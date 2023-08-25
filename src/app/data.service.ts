@@ -18,8 +18,8 @@ export class UserDataService {
     return this.http.post(`${this.baseUrl}`, user);
   }
 
-  updateUser(userId: number, user: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${userId}`, user);
+  updateUser(user: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}`, user);
   }
 
   deleteUser(userId: number): Observable<any> {

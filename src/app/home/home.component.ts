@@ -14,6 +14,10 @@ export class HomeComponent implements OnInit {
   users:any = [];
 
   ngOnInit(): void {
+    this.getAllUsers();
+  }
+
+  getAllUsers() {
     this.dataService.getAllUsers().subscribe({
       next: (res) => {
         this.users = res.response;
@@ -22,17 +26,23 @@ export class HomeComponent implements OnInit {
       },
       error: (error) => {
         console.log({error});
-
       }
     })
   }
 
+  createUser(): void {
+    this.router.navigate(['/add']); // Navigate to the create user component
+  }
+
   editUser(user: any){
-    this.router.navigate(['/edit'], { queryParams: user });
+    this.router.navigate(['/edit'], { queryParams: user });// Navigate to the edit user component
   }
 
   deleteUser(user: any) {
-
+    this.dataService.deleteUser(user.id).subscribe((res) => {
+      console.log(res);
+      alert("user deleted succesfully");
+      this.getAllUsers();
+    })
   }
-
 }
