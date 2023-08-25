@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EditFormComponent } from './edit-form/edit-form.component';
 import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
+import { AddUserFormComponent } from './add-user-form/add-user-form.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,11 @@ const routes: Routes = [
   {
     path: 'edit',
     component: EditFormComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'add',
+    component: AddUserFormComponent,
     pathMatch: 'full',
   },
   {
