@@ -1,0 +1,30 @@
+<div class="home-container">
+  <h2>User List</h2>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user?.gender }}</td>
+        <td>{{ user?.status }}</td>
+        <td>
+          <button (click)="editUser(user)" class="action-button">
+            <i class="fa fa-pencil"></i>
+          </button>
+          <button (click)="deleteUser(user)" class="action-button">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

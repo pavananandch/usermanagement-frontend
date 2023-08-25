@@ -1,0 +1,13 @@
+.header-container {
+  background-color: cyan;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
