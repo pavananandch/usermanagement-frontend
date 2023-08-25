@@ -8,31 +8,12 @@ import { UserDataService } from '../data.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  users:any = [];
   constructor(private router: Router, private dataService: UserDataService) { }
-
-  users = [{
-    id: 1,
-    name: "Anand",
-    email: "anand@gmail.com",
-    gender: "Male",
-    status: true
-  },{
-    id: 2,
-    name: "pavan",
-    email: "pavan@gmail.com",
-    gender: "Male",
-    status: true
-  },{
-    id: 3,
-    name: "sai",
-    email: "sai@gmail.com",
-    gender: "Male",
-    status: false
-  }];
 
   ngOnInit(): void {
     // GET users API call
+    this.users = this.dataService.users;
   }
 
   editUser(user: any){
@@ -41,7 +22,7 @@ export class HomeComponent implements OnInit {
 
   deleteUser(user: any) {
     //DELETE user API call
-    let index = this.users.findIndex(data => data.id === user.id);
+    let index = this.users.findIndex((data:any) => data.id === user.id);
     this.users.splice(index,1);
   }
 

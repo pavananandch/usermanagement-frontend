@@ -1,0 +1,33 @@
+.add-container {
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #337ab7;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.back-button i {
+  margin-right: 5px;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
