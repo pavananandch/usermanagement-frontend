@@ -16,6 +16,10 @@ export class HomeComponent implements OnInit {
     this.users = this.dataService.users;
   }
 
+  createUser(): void {
+    this.router.navigate(['/add']); // Navigate to the create user component
+  }
+
   editUser(user: any){
     this.router.navigate(['/edit'], { queryParams: user });
   }
